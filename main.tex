@@ -167,7 +167,7 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %------------------------------------------------------------------------------------------------------------
 \usetikzlibrary{celtic}
 \newcommand{\uzor}{%	
-\begin{center}Байдарка
+\begin{center}
 	\begin{tikzpicture}[%
 	scale=0.17,
 	transform shape,
@@ -397,7 +397,7 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 {
 %\setlength{\cftbeforetoctitleskip}{1.5cm}%чтобы влезло на 1 страницу 11 шрифт
 %\setlength{\cftbeforetoctitleskip}{0.5cm}%чтобы влезло на 1 страницу 12 шрифт
-\setlength{\cftbeforetoctitleskip}{0.0cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+\setlength{\cftbeforetoctitleskip}{1.0cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
 \pdfbookmark[0]{\contentsname}{toc} % Добавлять перед \tableofcontents
 \tableofcontents
 }
@@ -406,7 +406,11 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \input{thankyou}
 %
 % ПРОЛОГ
+%\afterpage{\blankpage}
 \input{prolog}
+
+%\afterpage{\blankpage}
+%
 \input{суна2023/заброска.tex} % Старая Ладога и Кивач
 \input{суна2023/паджерик.tex} % 1 день
 \input{суна2023/венеция.tex} % 2 день Киря нажрался
