@@ -218,6 +218,10 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 	\fi
 }
 
+\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\chaptermark}[1]{\markright{Часть \thepart.\ \chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
+
 \fancyhead[LE]{\fancyplain{}{\bfseries \parttitle}}
 \fancyhead[CE]{\fancyplain{}{}}
 \fancyhead[RE]{\fancyplain{}{}}
@@ -225,6 +229,7 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \fancyhead[LO]{\fancyplain{}{}}
 \fancyhead[CO]{\fancyplain{}{}}
 \fancyhead[RO]{\fancyplain{}{\bfseries \rightmark}}
+%\fancyhead[RO]{\fancyplain{}{\bfseries \chaptermark}}
 
 \fancyfoot[LE]{\fancyplain{}{\bfseries \thepage}}
 \fancyfoot[CE]{\fancyplain{}{}}
@@ -234,9 +239,9 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{\bfseries \thepage}}
 
-\renewcommand{\footrulewidth}{0.4pt}
-%\renewcommand{\chaptermark}[1]{\markright{Часть \thepart.\ \chaptername\ \thechapter.\ #1}{}}
-\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
+%\renewcommand{\footrulewidth}{0.4pt}
+%%\renewcommand{\chaptermark}[1]{\markright{Часть \thepart.\ \chaptername\ \thechapter.\ #1}{}}
+%\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
 
 % Пустая страница
 \newcommand\blankpage{%
@@ -370,6 +375,9 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \makeatletter
 \@addtoreset{chapter}{part} % Нумерация глав заново в пределах части
 \makeatother  
+
+\def\year{2024}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \input{coordsvalues}
@@ -411,7 +419,7 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 
 %\afterpage{\blankpage}
 %
-\input{суна2023/в_платье_белом.tex} % свадьба Кири
+\input{суна2023/платье.tex} % свадьба Кири
 \input{суна2023/пивотека.tex} % покупка снаряги
 \input{суна2023/заброска.tex} % 1 день заброски
 \input{суна2023/ладога.tex} % 2 день заброски
