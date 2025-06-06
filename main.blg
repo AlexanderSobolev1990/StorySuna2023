@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: abbrvnat.bst.bst
+Database file #1: bibliography.bib
+Warning--empty publisher in Шилов
+You've used 12 entries,
+            2773 wiz_defined-function locations,
+            649 strings with 6709 characters,
+and the built_in function-call counts, 3562 in all, are:
+= -- 271
+> -- 120
+< -- 12
++ -- 48
+- -- 36
+* -- 187
+:= -- 590
+add.period$ -- 37
+call.type$ -- 12
+change.case$ -- 37
+chr.to.int$ -- 12
+cite$ -- 25
+duplicate$ -- 239
+empty$ -- 383
+format.name$ -- 48
+if$ -- 737
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 23
+newline$ -- 69
+num.names$ -- 48
+pop$ -- 139
+preamble$ -- 1
+purify$ -- 36
+quote$ -- 0
+skip$ -- 147
+stack$ -- 0
+substring$ -- 24
+swap$ -- 12
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 77
+warning$ -- 1
+while$ -- 36
+width$ -- 0
+write$ -- 153
+(There was 1 warning)
