@@ -387,6 +387,15 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 
 \def\year{2025}
 
+\usepackage{xspace} 
+%\newcommand{\exldots}{!\kern0.166em.\kern0.166em.}
+%\newcommand{\quldots}{?\kern0.166em.\kern0.166em.}
+%\newcommand{\exldots}{\mathpunct{! \ldotp\ldotp}\xspace}  % !..
+\newcommand{\exldots}{\unskip!\kern2pt\ldotp\ldotp\xspace}
+\newcommand{\exldotsit}{\unskip\textit!\kern2pt\ldotp\ldotp\xspace}
+\newcommand{\quldots}{\mathpunct{?\ldotp\ldotp}\xspace}  % ?..
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \input{coordsvalues}
