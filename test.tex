@@ -1,0 +1,474 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \file       main.tex
+% \brief      Главный файл настроек TeX проекта
+% \date       24.08.22 - создан
+% \author     Соболев А.А.
+% \details    Для сборки в TexStudio - выбрать компилятор xelatex в настройках проекта
+%             Для сборки при помощи CMake - mkdir build && cd build && cmake .. && make	
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\listfiles
+\documentclass[headings=chapterprefix,a5paper]{book}
+\usepackage[monochrome]{color}
+\usepackage[12pt]{extsizes}
+\usepackage[left=1.5cm,right=1.5cm,top=2.0cm,bottom=2.0cm]{geometry}
+\linespread{1.0} % по умолчанию 1.0
+%
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{tocloft}
+\usepackage{pgfornament}
+\usepackage{amsmath}
+\usepackage{gensymb} % Для знака градусаo.ttf}							
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cite}
+\usepackage{pstricks}
+\usepackage{psvectorian}
+\usepackage{fontspec}
+\usepackage{pdfpages}
+%\usepackage{verse} % Для стихотворений
+\usepackage{poetry} % Для стихотворений
+\usepackage[russian]{babel}
+\usepackage{pifont} % Для символов списка
+%\usepackage[page,toc,titletoc,title]{appendix}
+\usepackage{icomma}
+\usepackage[labelformat=empty]{caption}
+
+
+%\usepackage{afterpage}
+%\usepackage{graphicx}
+%\graphicspath{ {./pictures/} }
+\graphicspath{ {./pictures/linographs/}{./pictures/disign/} }
+%\usepackage{courier}
+\usepackage[pages=some]{background}
+
+\newcommand\MyVarAuthorName{А.А.\thinspace Соболев}
+\newcommand\MyVarBookName{Карельский дневник}
+\newcommand\MyVarBookNamesec{Повесть о сплаве на байдарках\\по маршруту <<Сунская цепочка>>}
+%\newcommand\MyVarAuthorName{Автор}
+%\newcommand\MyVarBookName{Название}
+
+\newcommand{\UDK}{0000}%{821.161.1}
+\newcommand{\BBK}{0000}%{84 (2Рос-Рус) 6}
+\newcommand{\BibCode}{C00}%{C54}
+\newcommand{\ISBN}{ISBN 0000-0000-0000-0000}%{ISBN 978-5-6048796-4-1}
+
+\setmainfont[%
+ItalicFont=NewCM10-Italic.otf,%
+BoldFont=NewCM10-Bold.otf,%
+BoldItalicFont=NewCM10-BoldItalic.otf,%
+SmallCapsFeatures={Numbers=OldStyle}]{NewCM10-Regular.otf}
+
+\setsansfont[%
+ItalicFont=NewCMSans10-Oblique.otf,%
+BoldFont=NewCMSans10-Bold.otf,%
+BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+SmallCapsFeatures={Numbers=OldStyle}]{NewCMSans10-Regular.otf}
+
+%\setmonofont[ItalicFont=NewCMMono10-Italic.otf,%
+\newfontfamily{\monofont}[ItalicFont=NewCMMono10-Italic.otf,%
+BoldFont=NewCMMono10-Bold.otf,%
+BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
+
+% Adjust sectional unit title fonts in ToC
+%\renewcommand{\cftpartfont}{RunicAltNo}
+%\renewcommand{\cftpartfont}{%
+%%	\fontsize{11}{13}\usefont{runicaltno}{phv}{bc}{n}\selectfont
+%	\fontsize{11}{13}\usefont{T2C}{runicaltno}{bc}{n}\selectfont
+%}
+
+\usepackage{afterpage}
+%\usepackage[x-1a3]{pdfx} % Вызывает невозможность собирать в texstudio!
+\usepackage{ctable}
+\usepackage{longtable}
+\usepackage{graphicx}
+%\usepackage{textpos}
+%\usepackage{wrapfig}
+%\usepackage{floatflt}
+%\graphicspath{ {./images/} }
+%--------------------------------------
+% эпиграф
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.55\textwidth} %0.6
+\renewcommand{\textflush}{flushleft} \renewcommand{\sourceflush}{flushleft}
+\let\originalepigraph\epigraph 
+\renewcommand\epigraph[2]{\originalepigraph{\textit{#1}}{\scriptsize{#2}}} %\textsc
+%------------------------------------------------------------------------------------------------------------
+%настройки для А4
+%\usepackage[12pt]{extsizes}
+%\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+%\linespread{1.15} % по умолчанию 1.0
+%------------------------------------------------------------------------------------------------------------
+%настройки для А5
+%\usepackage[11pt]{extsizes}
+%\usepackage[left=1.5cm,right=1.5cm,top=2.0cm,bottom=2.0cm]{geometry}
+%\linespread{1.0} % по умолчанию 1.0
+%------------------------------------------------------------------------------------------------------------
+%настройки для А4
+%\newcommand{\corner}[1]{%
+%	\begin{tikzpicture}[remember picture, overlay]
+%	\node[anchor=north east, shift={(-2.5cm,-5.3cm)}] at (current page.north east){%
+%		\pgfornament[width=2.2cm]{#1}};
+%	\end{tikzpicture}%
+%}
+%------------------------------------------------------------------------------------------------------------
+%настройки для А5
+\newcommand{\corner}[1]{%
+	\begin{tikzpicture}[remember picture, overlay]
+	\node[anchor=north east, shift={(-1.5cm,-4.2cm)}] at (current page.north east){%
+		\pgfornament[width=2.2cm]{#1}};
+	\end{tikzpicture}%
+}
+
+%\newcommand{\vepsianrose}{%
+%	\begin{tikzpicture}[remember picture, overlay]
+%	\node[anchor=north east, shift={(-1.5cm,-4.2cm)}] at (current page.north east){%
+%		\includegraphics{veps1.svg}};
+%	\end{tikzpicture}%
+%}
+
+%\newcommand{\vepsianrose}{%
+%	\begin{figure}[h]
+%		\includegraphics[scale=0.14]{vepsp}
+%	\end{figure}
+%}
+
+%\newcommand{\vepsianrose}{%
+%	\begin{tikzpicture}
+%	\node[anchor=north east, shift={(-1.5cm,-4.2cm)}] at (current page.north east){%
+%		\includegraphics[scale=0.14]{vepsp}%
+%	}%
+%	\end{tikzpicture}
+%}
+
+%\newcommand{\vepsianrose}{%
+%\begin{figure}[h!]
+%	\vspace*{-7.5cm}
+%	\hspace*{7.5cm}\includegraphics[scale=0.14]{vepsp}
+%\end{figure}
+%\vspace*{3.5cm}
+%}
+\newcommand{\vepsianrose}{%
+	\begin{figure}[h!]
+		\vspace*{-77mm}
+%		\hspace*{8.15cm}\includegraphics[scale=0.12]{vepsroser} % Красный
+%		\hspace*{8.15cm}\includegraphics[scale=0.12]{vepsrosedr} % Темно-красный
+		\hspace*{8.15cm}\includegraphics[scale=0.12]{__rose_black} % Черный
+	\end{figure}
+	\vspace*{4.0cm}
+}
+
+
+%\newcommand{\vepsianrose}{%
+%	\begin{tikzpicture}
+%		\includegraphics[scale=0.14]{vepsp}
+%	\end{tikzpicture}
+%}
+
+%------------------------------------------------------------------------------------------------------------
+\usetikzlibrary{celtic}
+\newcommand{\uzor}{%	
+\begin{center}
+	\begin{tikzpicture}[%
+	scale=0.17,
+	transform shape,
+	celtic path/.style={
+		draw,
+		black!10!red,
+%		double distance=0.6mm,
+%		line width=0.375mm
+		double=white,%black!10!red, 
+		double distance=0.6mm,
+		line width=0.3mm
+	}
+	]
+	\CelticDrawPath{
+		size={64,4},
+		max steps=64
+	}
+	\end{tikzpicture}	
+\end{center}
+}
+
+\newcommand{\greenline}{
+\begin{center}
+	\begin{tikzpicture}
+		\fill[fill=black!30!green,] (0,0) rectangle (10.8,0.2);
+	\end{tikzpicture}
+\end{center}
+}
+%---------------------------------------------------------------------
+\usepackage{indentfirst} % Первая строка главы - с красной строки
+\setlength{\parindent}{1.0cm} % Отступ слева первой абзаца
+\setlength{\parskip}{0.25cm} % Отступ между абзацами
+
+% Заголовки сверху и снизу каждой страницы (Headers & footers)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+
+% Сделаем печать названия Части на левой странице
+\newcommand*\parttitle{}
+\let\origpart\part
+\renewcommand*{\part}[2][]{%
+	\ifx\\#1\\% optional argument not present?
+	\origpart{#2}%
+	\renewcommand*\parttitle{Часть \thepart.\ #2}%
+	\else
+	\origpart[#1]{#2}%
+	\renewcommand*\parttitle{#1}%
+	\fi
+}
+
+\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\chaptermark}[1]{\markright{Часть \thepart.\ \chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
+
+\fancyhead[LE]{\fancyplain{}{\bfseries \parttitle}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{}}
+
+\fancyhead[LO]{\fancyplain{}{}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries \rightmark}}
+%\fancyhead[RO]{\fancyplain{}{\bfseries \chaptermark}}
+
+\fancyfoot[LE]{\fancyplain{}{\bfseries \thepage}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize \MyVarBookName}}
+
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize \MyVarAuthorName }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{\bfseries \thepage}}
+
+%\renewcommand{\footrulewidth}{0.4pt}
+%%\renewcommand{\chaptermark}[1]{\markright{Часть \thepart.\ \chaptername\ \thechapter.\ #1}{}}
+%\renewcommand{\chaptermark}[1]{\markright{\chaptername\ \thechapter.\ #1}{}}
+
+% Пустая страница
+\newcommand\blankpage{%
+	\null%
+	\thispagestyle{empty}%
+	\newpage%
+}%
+
+\newcommand{\sdash}{\nobreakdash-}  % Дефис неразрывный без пробелов до и после
+\newcommand{\ndash}{\nobreakdash~--~}  % Короткое тире неразрывное с пробелами до и после
+\newcommand{\mdash}{\nobreakdash~---~} % Длинное тире неразрывное с пробелами до и после
+\newcommand{\nbdash}{\nobreakdash--}  % Короткое тире неразрывное с пробелами до и после
+\newcommand{\mbdash}{\nobreakdash---} % Длинное тире неразрывное без пробелов до и после
+%\newcommand{\diagdash}{\hspace*{\parindent}\nobreakdash---\thickspace}  % Короткое тире неразрывное с пробелами до и после
+\newcommand{\diagdash}{\nobreakdash---\thickspace}  % Короткое тире неразрывное с пробелами до и после
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft,calc}
+%\usepackage[newparttoc]{titlesec}
+%\usepackage{titletoc}
+%\usepackage{lipsum}
+%\usepackage{tocbasic}
+%
+%\titleformat{\part}[display]
+%{\centering\Huge\bfseries}{\partname~\thepart}
+%{1em}{\normalfont\bfseries}
+%
+%\titlecontents{part}[3pc]{\addvspace{3pc}\filcenter}
+%{\bfseries\partname~\thecontentslabel\\*[.2pc]\large}
+%{\bfseries\large}{}[\addvspace{1pc}]
+%
+%%\renewcommand\cftchapdotsep{\cftdotsep}
+%\titlecontents{chapter}[0em]{}
+%{\bfseries\chaptername~\thecontentslabel\hspace{2em}}
+%{\bfseries}
+%{\mdseries\titlerule*[0.75em]{.}\bfseries\contentspage}
+
+%\renewcommand{\cftpartfont}{\hfill\Large\bfseries\centering}
+\usepackage{xpatch}
+\makeatletter
+\patchcmd{\l@part}{#1}{{\underline{Часть #1}}\vspace{1.5em}}{}{}
+\makeatother
+\addtocontents{toc}{\cftpagenumbersoff{part}}
+
+%\renewcommand{\cftpartpresnum}{\Large Часть }
+%\setlength{\cftbeforepartskip}{2.5em}
+%\AtBeginDocument{\addtolength\cftpartnumwidth{\widthof{\bfseries Часть }}}
+
+%\renewcommand{\cftchappresnum}{ ~~Глава }
+\renewcommand{\cftchappresnum}{Глава~}
+\setlength{\cftbeforechapskip}{0.7em}
+\renewcommand\cftchapafterpnum{\vskip 0em} % for spacing after each entry
+%\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries ~~Глава~~ }}}
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries Глава~~}}}
+
+\renewcommand\cftchapdotsep{\cftdotsep} % Добавление точечек к элементу chapter							
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Шрифт главы и секции
+%\usepackage{titlesec}
+%\titleformat{\chapter}[display]
+%{\fontspec{NorseRus}\huge}
+%{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titleformat{\section}
+%{\fontspec{NorseRus}\Large}
+%{\thesection}{1em}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Фон
+\backgroundsetup{
+	scale=0.75,
+	color=black,
+	opacity=0.5,
+	angle=-1,
+	contents={%
+%		\includegraphics[width=\paperwidth,height=\paperheight]{len}
+		\includegraphics{len}
+	}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\wordattachment{Приложение}
+%
+%\def\writeattachmentnonum#1#2#3{
+%	\refstepcounter{attachment}
+%	\hfill{\MakeUppercase{\wordattachment}}\vspace{-3mm} \\
+%	\null\hfill{#1}\vspace{3mm} \\
+%	{
+%%		\attachmentsize\centering\MakeUppercase{#2}\par
+%		\normalsize\centering\MakeUppercase{#2}\par
+%	}
+%	\addcontentsline{toc}{attachment}{\wordattachment.~#2}
+%	\ifx&#3&\else
+%	\label{#3}
+%	\fi
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Вставляет приложение
+%% \attachment{description}{title}[label]
+%\def\attachment#1#2{
+%	\@ifnextchar[
+%	{\attachment@i{#1}{#2}}
+%	{\attachment@i{#1}{#2}[]}
+%}
+%
+%\def\attachment@i#1#2[#3]{
+%	\newpage
+%%	\ifnum\getnum{lastattachment}=1
+%	\writeattachmentnonum{#1}{#2}{#3}
+%%	\else
+%%	\writeattachmentnum{#1}{#2}{#3}
+%%	\fi
+%}
+%\usepackage{titlesec}
+%\renewcommand{\thesection}{\Asbuk{section}}
+%\newcommand{\intro}[1]{
+%	\stepcounter{section}
+%	\section*{\hfillПРИЛОЖЕНИЕ \arabic{section}}
+%	\begin{center}
+%		\bf{#1}
+%	\end{center}
+%%	\markboth{\MakeUppercase{#1}}{}
+%%	\addcontentsline{toc}{chapter}{Приложение \arabic{section}. #1}
+%}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\usepackage{parskip}
+
+\usepackage{titlesec}
+\usepackage[colorlinks=true,linktoc=all]{hyperref} % hyperfootnotes=false - не выделять сноски
+\hypersetup{
+	bookmarksnumbered
+}
+\usepackage{bookmark}
+\usepackage{tcolorbox} \newcommand{\ciao}[1]{{\setlength\fboxrule{0pt}\fbox{\tcbox[colframe=black,colback=white,shrink tight,boxrule=0.5pt,extrude by=1mm]{\small #1}}}}
+
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+\makeatletter
+\@addtoreset{chapter}{part} % Нумерация глав заново в пределах части
+\makeatother  
+
+\def\year{2025}
+
+\usepackage{xspace} 
+%\newcommand{\exldots}{!\kern0.166em.\kern0.166em.}
+%\newcommand{\quldots}{?\kern0.166em.\kern0.166em.}
+%\newcommand{\exldots}{\mathpunct{! \ldotp\ldotp}\xspace}  % !..
+\newcommand{\exldots}{\unskip!\kern2pt\ldotp\ldotp\xspace}
+\newcommand{\exldotsit}{\unskip\textit!\kern2pt\ldotp\ldotp\xspace}
+\newcommand{\quldots}{\mathpunct{?\ldotp\ldotp}\xspace}  % ?..
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\input{coordsvalues}
+\relpenalty=10000
+\binoppenalty=10000
+\clubpenalty=10000  % Это костыль против
+\widowpenalty=10000 % "висячих" строк
+\righthyphenmin=200 % Избавляемся
+%\interfootnotelinepenalty=10000
+{\sloppy	        % от переносов слов
+%\input{titlepage}   % Обложка
+%\input{typograph}
+%\input{annotation} % Аннотация глобально к сборнику
+%\afterpage{\blankpage}
+%\tableofcontents
+% Замена \blankpage в данном случае:
+%
+%\newpage
+%{
+%\null
+%\thispagestyle{empty}
+%\input{посвящается.tex}
+%}
+%
+%\newpage
+%{
+%\null
+%\thispagestyle{empty}
+%}
+%\newpage
+%
+%{
+%%\setlength{\cftbeforetoctitleskip}{1.5cm}%чтобы влезло на 1 страницу 11 шрифт
+%%\setlength{\cftbeforetoctitleskip}{0.5cm}%чтобы влезло на 1 страницу 12 шрифт
+%%\setlength{\cftbeforetoctitleskip}{0.0cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+%%\setlength{\cftbeforetoctitleskip}{-0.7cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+%\setlength{\cftbeforetoctitleskip}{-0.9cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+%\pdfbookmark[0]{\contentsname}{toc} % Добавлять перед \tableofcontents
+%\tableofcontents
+%}
+%
+% БЛАГОДАРНОСТИ 
+%\input{thankyou}
+%
+% ПРОЛОГ
+%\afterpage{\blankpage}
+%\input{prolog}
+
+%\afterpage{\blankpage}
+%
+%\input{суна2023/тест.tex} % Дорога домой
+\input{суна2023/тест2.tex} % Дорога домой
+
+%\afterpage{\blankpage}
+%\input{лидь2015/несколько_слов_о_сплавах} 
+%
+% ЭПИЛОГ
+%\input{epilog}
+%
+% ПРИЛОЖЕНИЯ
+%
+%\input{coordinates}
+%
+%\bibliographystyle{abbrvnatmy.bst} % fixed best!
+%\bibliographystyle{abbrvnat.bst} % fixed best!
+%\bibliographystyle{apalike} % fixed best!
+
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Литература}
+%\bibliography{bibliography}
+
+%
+%\input{lastpage}
+}
+\end{document}
