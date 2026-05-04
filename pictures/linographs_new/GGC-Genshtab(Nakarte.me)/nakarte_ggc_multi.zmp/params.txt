@@ -1,0 +1,20 @@
+﻿
+[PARAMS]
+GUID={BF6C9C19-AD78-4F1F-96CE-6EF1F5B12345}
+
+ParentSubMenu_ru=Топокарты\Генштаб(Nakarte.me)
+ParentSubMenu_uk=Топокарти\Генштаб(Nakarte.me)
+ParentSubMenu=Topomaps\Soviet military maps(Nakarte.me)
+
+name_ru=ГосГисЦентр многослой (Nakarte.me)
+name_uk=ГосГисЦентр multilayer (Nakarte.me)
+name=GosGisCentr multilayer (Nakarte.me)
+
+NameInCache=nakarte_ggc_multilayer
+EPSG=3785
+
+DefURLBase=https://tiles.nakarte.me/
+
+Ext=.png
+DetectContentType=1
+ContentType=image/jpeg,image/png

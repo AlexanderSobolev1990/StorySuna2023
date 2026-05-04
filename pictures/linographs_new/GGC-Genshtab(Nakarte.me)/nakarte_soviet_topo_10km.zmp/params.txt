@@ -1,0 +1,23 @@
+﻿
+[PARAMS]
+GUID={C182248A-B1ED-4090-A8C3-3972804A93E5}
+
+ParentSubMenu_ru=Топокарты\Генштаб(Nakarte.me)
+ParentSubMenu_uk=Топокарти\Генштаб(Nakarte.me)
+ParentSubMenu=Topomaps\Soviet military maps(Nakarte.me)
+
+name_ru=Генштаб 10 км (Nakarte.me)
+name_uk=Генштаб 10 км (Nakarte.me)
+name=Genshtab 10 km (Nakarte.me)
+
+NameInCache=nakarte_soviet_topo_10km
+asLayer=0
+EPSG=3785
+
+DefURLBase=https://tiles.nakarte.me/topo001m/{z}/{x}/{-y}
+
+RequestHead=Referer:http://www.sasgis.org/
+
+Ext=.jpg
+DetectContentType=1
+ContentType=image/jpeg,image/png

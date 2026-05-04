@@ -1,0 +1,20 @@
+﻿
+[PARAMS]
+GUID={4463DAE6-03C7-4189-80E5-144535435436}
+
+ParentSubMenu_ru=Топокарты\Генштаб(Nakarte.me)
+ParentSubMenu_uk=Топокарти\Генштаб(Nakarte.me)
+ParentSubMenu=Topomaps\Soviet military maps(Nakarte.me)
+
+name_ru=ГосГисЦентр 500 м (Nakarte.me)
+name_uk=ГосГисЦентр 500 м (Nakarte.me)
+name=GosGisCentr 500 m (Nakarte.me)
+
+NameInCache=nakarte_ggc_500m
+EPSG=3785
+
+DefURLBase=https://tiles.nakarte.me/ggc500/{z}/{x}/{-y}
+
+Ext=.png
+DetectContentType=1
+ContentType=image/jpeg,image/png
