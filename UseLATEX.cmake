@@ -213,6 +213,17 @@ FUNCTION(LATEX_SETUP_VARIABLES)
     FIND_PACKAGE(LATEX)
     FIND_PACKAGE(UnixCommands)
 
+    # Prefer BibTeXu for UTF-8 bibliographies with Cyrillic names.
+    # FindLATEX.cmake may cache BIBTEX_COMPILER as bibtex/bibtex8; force bibtexu here.
+    FIND_PROGRAM(BIBTEXU_COMPILER
+        NAMES bibtexu
+        DOC "BibTeXu compiler for UTF-8 BibTeX databases"
+        )
+    IF (BIBTEXU_COMPILER)
+        SET(BIBTEX_COMPILER ${BIBTEXU_COMPILER}
+            CACHE FILEPATH "BibTeX compiler; forced to BibTeXu for UTF-8/cyrillic support" FORCE)
+    ENDIF ()
+
     MARK_AS_ADVANCED(CLEAR
         LATEX_COMPILER
         PDFLATEX_COMPILER
@@ -221,7 +232,7 @@ FUNCTION(LATEX_SETUP_VARIABLES)
         )
 
     LATEX_NEEDIT(PDFLATEX_COMPILER pdflatex)
-    LATEX_NEEDIT(BIBTEX_COMPILER bibtex)
+    LATEX_NEEDIT(BIBTEX_COMPILER bibtexu)
     LATEX_NEEDIT(MAKEINDEX_COMPILER makeindex)
 
     SET(LATEX_COMPILER_FLAGS "-interaction=errorstopmode"

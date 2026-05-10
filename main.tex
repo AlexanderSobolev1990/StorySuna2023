@@ -397,6 +397,28 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \newcommand{\exldotsit}{\unskip\textit!\kern2pt\ldotp\ldotp\xspace}
 \newcommand{\quldots}{\mathpunct{?\ldotp\ldotp}\xspace}  % ?..
 
+\usepackage[authoryear,square]{natbib}
+%\setcitestyle{
+%	authoryear,
+%	open={[},
+%	close={)]},
+%	aysep={(},
+%	yysep={; }
+%}
+%\bibpunct{[}{]}{;}{a}{,}{,}
+%\bibpunct{[}{)]}{;}{a}{(}{; }
+
+%\makeatletter
+%\AtBeginDocument{%
+%	\bibpunct{[}{)]}{); }{a}{(\kern-\fontdimen2\font}{,}%
+%	\let\cite\citep
+%}
+%\makeatother
+
+\let\cite\citep
+\setlength{\bibhang}{2.3em}
+%\setlength{\bibsep}{1.0\baselineskip}
+\setlength{\bibsep}{0.93\baselineskip}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -477,13 +499,19 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \input{coordinates}
 %
 %\bibliographystyle{abbrvnatmy.bst} % fixed best!
-\bibliographystyle{abbrvnat.bst} % fixed best!
+%\bibliographystyle{abbrvnat.bst}
+%\bibliographystyle{abbrvnatrussian}
 %\bibliographystyle{apalike} % fixed best!
 
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Литература}
+
+\begingroup
+\RaggedRight
+\bibliographystyle{abbrvnatrussian}
 \bibliography{bibliography}
+\endgroup
 
 %
 \input{lastpage}

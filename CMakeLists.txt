@@ -33,6 +33,8 @@ SET(parts
     #
     lastpage.tex
     coordinates.tex
+    #
+    abbrvnatrussian.bst
 )
 ADD_LATEX_DOCUMENT(
 	main.tex
