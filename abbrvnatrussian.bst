@@ -161,10 +161,10 @@ FUNCTION {format.first.author.inverted}
 { author empty$
     { editor empty$
         { "" }
-        { editor #1 "{vv~}{ll}{, jj}{, f.}" format.name$ }
+        { editor #1 "{vv~}{ll}{, jj}{, ff}" format.name$ }
       if$
     }
-    { author #1 "{vv~}{ll}{, jj}{, f.}" format.name$ }
+    { author #1 "{vv~}{ll}{, jj}{, ff}" format.name$ }
   if$
 }
 
