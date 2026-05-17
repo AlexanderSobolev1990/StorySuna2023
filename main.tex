@@ -398,10 +398,11 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %\newcommand{\quldots}{\mathpunct{?\ldotp\ldotp}\xspace}  % ?..
 
 %\newcommand{\myldots}{\unskip…}
-\newcommand{\myldots}{\unskip...}
-\newcommand{\quldots}{?..}
-\newcommand{\exldots}{!..}
-\newcommand{\exldotsit}{\textit!..}
+\newcommand{\myldots}{\ifhmode\unskip\fi\mbox{...}}
+\newcommand{\quldots}{\ifhmode\unskip\fi\mbox{?..}}
+\newcommand{\exldots}{\ifhmode\unskip\fi\mbox{!..}}
+\newcommand{\exldotsit}{\ifhmode\unskip\fi\mbox{\textit{!..}}}
+
 
 \usepackage[authoryear,square]{natbib}
 %\setcitestyle{
