@@ -1,5 +1,6 @@
 *.user
 /build
+/build_test_pics
 /pictures/linographs_all
 /pictures/old
 #main-pics.pdf
