@@ -153,11 +153,20 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %\vspace*{3.5cm}
 %}
 \newcommand{\vepsianrose}{%
+	\AddToShipoutPictureFG*{%
+		\begin{tikzpicture}[remember picture, overlay]
+			\node[anchor=south east, inner sep=0pt, shift={(-1.95cm,-160.25pt)}] at (current page.north east){%
+%			\includegraphics[scale=0.12]{vepsroser}% Красный
+%			\includegraphics[scale=0.12]{vepsrosedr}% Темно-красный
+				\includegraphics[scale=0.12]{__rose_black}% Черный
+			};
+		\end{tikzpicture}%
+	}%
 	\begin{figure}[h!]
 		\vspace*{-77mm}
-%		\hspace*{8.15cm}\includegraphics[scale=0.12]{vepsroser} % Красный
-%		\hspace*{8.15cm}\includegraphics[scale=0.12]{vepsrosedr} % Темно-красный
-		\hspace*{8.15cm}\includegraphics[scale=0.12]{__rose_black} % Черный
+%		\hspace*{8.15cm}\phantom{\includegraphics[scale=0.12]{vepsroser}} % Красный
+%		\hspace*{8.15cm}\phantom{\includegraphics[scale=0.12]{vepsrosedr}} % Темно-красный
+		\hspace*{8.15cm}\phantom{\includegraphics[scale=0.12]{__rose_black}} % Черный
 	\end{figure}
 	\vspace*{4.0cm}
 }
