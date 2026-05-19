@@ -453,29 +453,78 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %\tableofcontents
 % Замена \blankpage в данном случае:
 
-\newpage
-{
-\null
-\thispagestyle{empty}
-\input{посвящается.tex}
-}
+%\newpage
+%{
+%\null
+%\thispagestyle{empty}
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{pinebranch}	
+%\end{figure}
+%\input{посвящается.tex}
+%}
 
 \newpage
-{
-\null
 \thispagestyle{empty}
-}
+
+\vspace*{1em}
+
+\noindent
+\includegraphics[width=0.85\textwidth]{pine_branch_transparent_3}
+
+\vspace*{-1em}
+
+\newpage
+\input{посвящается.tex}
+
+
+%\newpage
+%{
+%\null
+%\thispagestyle{empty}
+%}
+
+\newpage
+\thispagestyle{empty}
+
+\vspace*{9em}
+
+\noindent
+\includegraphics[width=0.99\textwidth]{naturmort8}
+
+%\vspace*{-1em}
+
+
 \newpage
 %
 {
 %\setlength{\cftbeforetoctitleskip}{1.5cm}%чтобы влезло на 1 страницу 11 шрифт
 %\setlength{\cftbeforetoctitleskip}{0.5cm}%чтобы влезло на 1 страницу 12 шрифт
 %\setlength{\cftbeforetoctitleskip}{0.0cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
-%\setlength{\cftbeforetoctitleskip}{-0.7cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
-\setlength{\cftbeforetoctitleskip}{-0.9cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+%\setlength{\cftbeforetoctitleskip}{-0.9cm}%чтобы влезло на 1 страницу 12 шрифт c прологом
+\setlength{\cftbeforetoctitleskip}{-4mm}
+\setlength{\cftaftertoctitleskip}{9mm}
 \pdfbookmark[0]{\contentsname}{toc} % Добавлять перед \tableofcontents
 \tableofcontents
 }
+
+\newpage
+\thispagestyle{empty}
+\vspace*{-15mm}
+\noindent
+%\includegraphics[scale=0.068]{__karjala_black_vert}
+%\hfill
+%\includegraphics[scale=0.2]{prolog1}
+\noindent
+\begin{minipage}[t]{0.205\textwidth}
+	\includegraphics[scale=0.068]{__karjala_black_vert}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.8\textwidth}
+%	\includegraphics[scale=0.425]{prolog3}
+	\includegraphics[scale=0.3455]{kiv_transparent2}
+\end{minipage}
+
 %
 % БЛАГОДАРНОСТИ 
 %\input{thankyou}
