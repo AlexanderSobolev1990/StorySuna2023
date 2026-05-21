@@ -1,9 +1,9 @@
 \chapter{Тест иллюстраций}
 
-Тестовая глава проверяет посадку активных сюжетных иллюстраций из
-\texttt{annotation.tex}, глав каталога \texttt{суна2023}, \texttt{prolog.tex}
-и \texttt{epilog.tex}. Декоративная роза на первой странице глав и карельский
-узор первой страницы здесь не воспроизводятся.
+Тестовая глава проверяет посадку активных иллюстраций, напрямую вставленных в
+\texttt{main.tex}, \texttt{annotation.tex}, главы каталога \texttt{суна2023},
+\texttt{prolog.tex} и \texttt{epilog.tex}. Фоновый и обложечный декор, а также
+декоративная роза на первой странице глав здесь не воспроизводятся.
 
 \providecommand{\SunaLorem}{%
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non neque at
@@ -209,6 +209,27 @@
 			\end{tikzpicture}
 	\end{figure}
 }
+
+\providecommand{\SunaPrologOpening}[1]{%
+	\clearpage
+	\SunaLabel{#1}{__karjala_black_vert, kiv_transparent2}
+	\vspace*{-15mm}
+	\noindent
+	\begin{minipage}[t]{0.205\textwidth}
+		\includegraphics[scale=0.068]{__karjala_black_vert}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.8\textwidth}
+		\includegraphics[scale=0.3455]{kiv_transparent2}
+	\end{minipage}
+	\par
+}
+
+\SunaNoTextAfterNext
+\SunaFigureHere{main-01}{h}{pine_branch_transparent_3}{width=0.85\textwidth}
+\SunaNoTextAfterNext
+\SunaFigureHere{main-02}{h}{naturmort8}{width=0.99\textwidth}
+\SunaPrologOpening{main-03}
 
 \SunaNoTextAfterNext
 \SunaFigureHere{01}{h}{pine}{width=1.0\textwidth}
