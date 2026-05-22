@@ -212,17 +212,19 @@
 
 \providecommand{\SunaPrologOpening}[1]{%
 	\clearpage
-	\SunaLabel{#1}{__karjala_black_vert, kiv_transparent2}
-	\vspace*{-15mm}
-	\noindent
-	\begin{minipage}[t]{0.205\textwidth}
-		\includegraphics[scale=0.068]{__karjala_black_vert}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.8\textwidth}
-		\includegraphics[scale=0.3455]{kiv_transparent2}
-	\end{minipage}
-	\par
+	\SunaLabel{#1}{__karjala_black_vert, kiv_transparent5}
+	\thispagestyle{empty}
+	\AddToShipoutPictureFG*{%
+		\begin{tikzpicture}[remember picture, overlay]
+			\node[inner sep=0pt] at (current page.center){%
+				\includegraphics[height=0.84\paperheight]{__karjala_black_vert}%
+				\hspace{-0.3mm}%
+				\includegraphics[height=0.84\paperheight]{kiv_transparent5}%
+			};
+		\end{tikzpicture}%
+	}
+	\null
+	\clearpage
 }
 
 \SunaNoTextAfterNext
@@ -232,8 +234,8 @@
 \SunaPrologOpening{main-03}
 
 \SunaNoTextAfterNext
-\SunaFigureHere{01}{h}{pine}{width=1.0\textwidth}
-\SunaFigureTop{02}{t}{railway}{width=1.0\textwidth}
+\SunaFigureHere{01}{h}{pine3}{width=1.0\textwidth}
+\SunaFigureTop{02}{t}{railway3}{width=1.0\textwidth}
 \SunaSideBySide{03}{0.48\textwidth}{0.48\textwidth}{wedding}{width=\linewidth}
 \SunaFigureHere{04}{h}{bar}{width=1.0\textwidth}
 \SunaWrap{05}{18}{r}{0.50\textwidth}{girl}{width=0.48\textwidth}
@@ -243,11 +245,11 @@
 \SunaFigureHere{08}{h}{ladoga}{width=1.0\textwidth}
 \SunaNoTextAfterNext
 \SunaFigureTop{09}{t}{panoram}{width=1.0\textwidth}
-\SunaFigureTop{10}{t}{republic}{width=1.0\textwidth}
+\SunaFigureTop{10}{t}{republic2}{width=1.0\textwidth}
 \SunaSideBySide{11}{0.45\textwidth}{0.5\textwidth}{kivach}{width=\linewidth}
 \SunaFigureHere{12}{h}{ussr}{width=1.0\textwidth}
 \SunaNoTextAfterNext
-\SunaFigureHere{13}{h}{jeep}{width=1.0\textwidth}
+\SunaFigureHere{13}{h}{jeep2}{width=1.0\textwidth}
 \SunaFigureHere{14}{h}{keelson}{width=1.0\textwidth}
 \SunaFigureHere{15}{h}{what}{width=1.0\textwidth}
 \SunaWrapTight{16}{10}{l}{0.52\textwidth}{skol}{width=0.52\textwidth}
@@ -275,22 +277,22 @@
 \SunaFigureTop{30}{t}{zampolit}{width=1.0\textwidth}
 \SunaNoTextAfterNext
 \SunaFigureTop{31}{t}{rastyazhka}{width=1.0\textwidth}
-\SunaFigureTop{32}{t}{sturm}{width=1.0\textwidth}
+\SunaFigureTop{32}{t}{sturm3}{width=1.0\textwidth}
 \SunaNoTextAfterNext
-\SunaFigureTop{33}{t}{nurmis}{width=1.0\textwidth}
+\SunaFigureTop{33}{t}{nurmis2}{width=1.0\textwidth}
 \SunaFigureHere{34}{h}{island}{width=1.0\textwidth}
 \SunaWrap{35}{22}{r}{0.6\textwidth}{valkyria}{width=0.6\textwidth}
 \SunaWrap{36}{23}{r}{0.6\textwidth}{shurik}{width=0.6\textwidth}
 \SunaNoTextAfterNext
 \SunaFigureTop{37}{t}{chalka}{width=1.0\textwidth}
 \SunaFigureTop{38}{t}{tent}{width=1.0\textwidth}
-\SunaInlinePic{39}{r}{0.55\textwidth}{serega}{width=0.5\textwidth}
+\SunaInlinePic{39}{r}{0.55\textwidth}{serega2}{width=0.5\textwidth}
 \SunaInlinePic{40}{l}{0.50\textwidth}{pardon}{width=0.5\textwidth}
 \SunaNoTextAfterNext
-\SunaFigureHere{41}{h}{bridge}{width=1.0\textwidth}
+\SunaFigureHere{41}{h}{bridge3}{width=1.0\textwidth}
 \SunaFigureHere{42}{h}{porog}{width=1.0\textwidth}
 \SunaNoTextAfterNext
-\SunaFigureHere{43}{h}{hardy}{width=1.0\textwidth}
+\SunaFigureHere{43}{h}{hardy3}{width=1.0\textwidth}
 \SunaFigureHere{44}{h}{wait}{width=1.0\textwidth}
 \SunaFigureTop{45}{t}{turning}{width=1.0\textwidth}
 \SunaInlinePic{46}{r}{0.48\textwidth}{radio}{width=0.46\textwidth}
@@ -306,7 +308,7 @@
 \SunaFigureHere{52}{h}{cheranga}{width=1.0\textwidth}
 \SunaWrap{53}{12}{l}{0.48\textwidth}{porridge}{width=0.45\textwidth}
 \SunaNoTextAfterNext
-\SunaFigureTop{54}{t}{rubanuli}{width=1.0\textwidth}
+\SunaFigureTop{54}{t}{rubanuli3}{width=1.0\textwidth}
 \SunaFigureTop{55}{t}{finished}{width=1.0\textwidth}
 \SunaWrap{56}{12}{l}{0.5\textwidth}{coffee}{width=0.47\textwidth}
 \SunaWrap{57}{21}{r}{0.58\textwidth}{pancakes}{width=0.56\textwidth}
@@ -320,6 +322,6 @@
 \SunaInlineBarePic{65}{l}{0.5\textwidth}{girvas1}{width=0.48\textwidth}
 \SunaBottomNext
 \SunaNoTextAfterNext
-\SunaFigureTight{66}{t}{ges}{width=1.0\textwidth}
-\SunaFigureHere{67}{h}{karjala}{width=1.0\textwidth}
+\SunaFigureTight{66}{t}{ges2}{width=1.0\textwidth}
+\SunaFigureHere{67}{h}{karjala2}{width=1.0\textwidth}
 \SunaDecoratedPhoto{68}{width=1.0\textwidth}{komanda2}

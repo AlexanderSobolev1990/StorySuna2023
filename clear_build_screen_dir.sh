@@ -1,0 +1,1 @@
+rm -rf build_screen && mkdir build_screen

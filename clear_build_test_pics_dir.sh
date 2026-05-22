@@ -1,0 +1,1 @@
+rm -rf build_test_pics && mkdir build_test_pics
