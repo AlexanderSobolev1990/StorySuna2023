@@ -10,8 +10,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listfiles
 \documentclass[headings=chapterprefix,a5paper]{book}
-\PassOptionsToPackage{monochrome}{xcolor}
-\usepackage[x-1a3]{pdfx}
+\ifdefined\StorySunaPDFX
+	\PassOptionsToPackage{monochrome}{xcolor}
+	\usepackage[x-1a3]{pdfx}
+\else
+	\usepackage[monochrome]{color}
+\fi
 \usepackage[12pt]{extsizes}
 \usepackage[left=1.5cm,right=1.5cm,top=2.0cm,bottom=2.0cm]{geometry}
 \linespread{1.0} % по умолчанию 1.0
@@ -381,6 +385,10 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %\usepackage{parskip}
 
 \usepackage{titlesec}
+\ifdefined\StorySunaPDFX
+\else
+	\usepackage[colorlinks=true,linktoc=all]{hyperref} % hyperfootnotes=false - не выделять сноски
+\fi
 \hypersetup{
 	bookmarksnumbered,
 	colorlinks,

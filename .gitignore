@@ -1,7 +1,9 @@
 *.user
 /build
 /build_pdfx
+/build_screen
 /build_test_pics
 /pictures/old
+/pictures/old_
 /output
 #main-pics.pdf
