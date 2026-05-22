@@ -1,5 +1,6 @@
 *.user
 /build
+/build_pdfx
 /build_test_pics
 /pictures/old
 /output

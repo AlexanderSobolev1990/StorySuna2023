@@ -10,7 +10,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listfiles
 \documentclass[headings=chapterprefix,a5paper]{book}
-\usepackage[monochrome]{color}
+\PassOptionsToPackage{monochrome}{xcolor}
+\usepackage[x-1a3]{pdfx}
 \usepackage[12pt]{extsizes}
 \usepackage[left=1.5cm,right=1.5cm,top=2.0cm,bottom=2.0cm]{geometry}
 \linespread{1.0} % по умолчанию 1.0
@@ -82,7 +83,6 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %}
 
 \usepackage{afterpage}
-%\usepackage[x-1a3]{pdfx} % Вызывает невозможность собирать в texstudio!
 \usepackage{ctable}
 \usepackage{longtable}
 \usepackage{graphicx}
@@ -381,9 +381,11 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 %\usepackage{parskip}
 
 \usepackage{titlesec}
-\usepackage[colorlinks=true,linktoc=all]{hyperref} % hyperfootnotes=false - не выделять сноски
 \hypersetup{
-	bookmarksnumbered
+	bookmarksnumbered,
+	colorlinks,
+	allcolors=black,
+	linktoc=all
 }
 \usepackage{bookmark}
 \usepackage{tcolorbox} \newcommand{\ciao}[1]{{\setlength\fboxrule{0pt}\fbox{\tcbox[colframe=black,colback=white,shrink tight,boxrule=0.5pt,extrude by=1mm]{\small #1}}}}
@@ -510,16 +512,20 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 
 \newpage
 \thispagestyle{empty}
-\vspace*{-15mm}
-\noindent
 %\includegraphics[scale=0.068]{__karjala_black_vert}
 %\hfill
 %\includegraphics[scale=0.2]{prolog1}
-\noindent\makebox[\textwidth][c]{%
-	\includegraphics[height=0.88\paperheight]{__karjala_black_vert}%
-	\hspace{-0.3mm}%
-	\includegraphics[height=0.88\paperheight]{kiv_transparent5}%
+\AddToShipoutPictureFG*{%
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[inner sep=0pt] at (current page.center){%
+			\includegraphics[height=0.84\paperheight]{__karjala_black_vert}%
+			\hspace{-0.3mm}%
+			\includegraphics[height=0.84\paperheight]{kiv_transparent5}%
+		};
+	\end{tikzpicture}%
 }
+\null
+\clearpage
 
 %
 % БЛАГОДАРНОСТИ 

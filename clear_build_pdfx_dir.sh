@@ -1,0 +1,1 @@
+rm -rf build_pdfx && mkdir build_pdfx
