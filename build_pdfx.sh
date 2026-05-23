@@ -24,7 +24,7 @@ run_xelatex() {
 			-interaction=nonstopmode \
 			-halt-on-error \
 			-shell-escape \
-			-output-driver="xdvipdfmx -z 0" \
+			-output-driver="xdvipdfmx -z 9 -V 4" \
 			"$JOB_NAME.tex"
 	)
 }
