@@ -13,6 +13,10 @@ cp -a "$ROOT_DIR/pictures/disign" "$PDFX_PICTURES_DIR/"
 cp -a "$ROOT_DIR/pictures/linographs_150dpi" "$PDFX_PICTURES_DIR/"
 find "$PDFX_PICTURES_DIR" -type f -iname '*.png' \
 	-exec mogrify -colorspace Gray -background white -alpha remove -alpha off +profile icc {} +
+
+# Копируем исходный .tex файл в папку сборки, чтобы xelatex его увидел
+cp "$ROOT_DIR/$JOB_NAME.tex" "$BUILD_DIR/"
+
 ln -sfn "$PDFX_PICTURES_DIR" "$BUILD_DIR/pictures"
 rm -f "$BUILD_DIR"/"$JOB_NAME".{aux,bbl,blg,idx,ilg,ind,log,out,pdf,toc,xdv}
 
