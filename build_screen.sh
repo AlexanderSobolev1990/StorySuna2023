@@ -2,16 +2,23 @@
 set -euo pipefail
 
 ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$ROOT_DIR/scripts/common.sh"
+
 BUILD_DIR="$ROOT_DIR/build_screen"
 OUTPUT_DIR="$ROOT_DIR/output"
-OUTPUT_PDF="$OUTPUT_DIR/StorySuna2023_Sobolev.pdf"
+OUTPUT_PDF="$OUTPUT_DIR/StorySuna2023_Sobolev_screen.pdf"
 RAW_PDF="$BUILD_DIR/main.pdf"
 COMPRESSED_PDF="$BUILD_DIR/main_screen_compressed.pdf"
 SCREEN_PDFSETTINGS="${SCREEN_PDFSETTINGS:-/printer}"
 
+need_cmd xelatex
+need_cmd bibtexu
+need_cmd gs
+
 mkdir -p "$BUILD_DIR" "$OUTPUT_DIR"
 ln -sfn "$ROOT_DIR/pictures" "$BUILD_DIR/pictures"
-rm -f "$BUILD_DIR"/main.{aux,bbl,blg,idx,ilg,ind,log,out,pdf,toc,xdv}
+clean_latex_job "$BUILD_DIR" main
+rm -f "$COMPRESSED_PDF"
 
 run_xelatex() {
 	(

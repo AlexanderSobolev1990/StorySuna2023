@@ -2,13 +2,17 @@
 set -euo pipefail
 
 ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$ROOT_DIR/scripts/common.sh"
+
 BUILD_DIR="$ROOT_DIR/build_test_pics"
 OUTPUT_DIR="$ROOT_DIR/output"
 OUTPUT_PDF="$OUTPUT_DIR/test_pics.pdf"
 
+need_cmd xelatex
+
 mkdir -p "$BUILD_DIR" "$OUTPUT_DIR"
 ln -sfn "$ROOT_DIR/pictures" "$BUILD_DIR/pictures"
-rm -f "$BUILD_DIR"/test_pics_main.{aux,log,out,pdf,xdv}
+clean_latex_job "$BUILD_DIR" test_pics_main
 
 (
 	cd "$BUILD_DIR"

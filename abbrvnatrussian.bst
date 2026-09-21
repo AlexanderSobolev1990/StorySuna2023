@@ -175,7 +175,7 @@ FUNCTION {format.names.direct}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
   { namesleft #0 > }
-  { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 'name :=
+  { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 'name :=
     nameptr #1 >
       { t ", " * name * 't := }
       { name 't := }
